@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- QUESTÃO 1A -->
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro - Enxovais Pedrosa</title>
+</head>
+<body style="background-color: #c7c7c7;">
+
+    
+    <form action="#" method="POST" style="background-color: white; border: 3px solid black; padding: 20px; max-width: 500px;">
+        
+        <h2>Cadastro de Cliente</h2>
+
+        
+        <p>
+            <label for="nome_empresa">Nome:</label><br>
+            <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Digite seu nome" required>
+        </p>
+
+        <p>
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email_empresa" name="email_empresa" placeholder="nome@email.com" required>
+        </p>
+
+        <p>
+            <label for="senha_cliente">Senha:</label><br>
+            <input type="password" id="senha_cliente" name="senha_cliente" placeholder="Digite uma senha" required>
+        </p>
+
+        <p>
+            <label for="cidade">Cidade onde reside:</label><br>
+            <select id="cidade" name="cidade">
+                <optgroup label="Minas Gerais">
+                <option value="uberlandia">Uberlândia</option>
+                <option value="ituiutaba">Ituiutaba</option>
+                <option value="uberaba">Uberaba</option>
+                <option value="montecarmelo">Monte Carmelo</option>
+            </optgroup>
+            <optgroup label="São Paulo">
+                <option value="franca">Franca</option>
+            </optgroup>
+            </select>
+        </p>
+
+        <p>
+            <input type="checkbox" id="termos" name="termos" required>
+            <label for="termos">Aceito os termos de uso da Empresa</label>
+        </p>
+
+        <p>
+            <input type="submit" value="Envio">
+            <input type="reset" value="Limpar">
+        </p>
+        
+        
+        <a href="index.html">Voltar para a Página Principal</a>
+
+    </form>
+
+</body>
+</html>
