@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">  
+    <title>Perfil - Enxovais Pedrosa</title>
+</head>
+<body style="margin: 20px">
+
+    <header style="text-align: center; background-color:#B0E0E6;">
+        <h1>Enxovais Pedrosa</h1>
+        <nav>
+            <a href="index.html">Início</a> |
+            <a href="perfil.html">Produtos</a> |
+            <a href="cadastro.html">Cadastro</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <section id="inicio">
+        <h2>Sobre nós</h2>
+        
+        <p id="paragrafoInicial">
+        Bem-vindo à <b>Enxovais Pedrosa</b>, sua parceira de confiança há mais de 15 anos no segmento de cama, mesa e banho. 
+        Somos apaixonados por transformar lares, oferecendo aconchego e estilo através de produtos cuidadosamente selecionados. 
+        Nossa missão é garantir que cada cliente encontre exatamente o que precisa para tornar seu ambiente mais confortável e bonito.
+    </p>
+    <p>
+        Especialistas em qualidade, trabalhamos exclusivamente com as melhores marcas do mercado, conhecidas pela durabilidade, 
+        pelo toque suave e pelo design inovador. Acreditamos que a escolha do enxoval faz toda a diferença no bem-estar do dia a dia, 
+        por isso, nossa linha completa é pensada para atender a todos os gostos e necessidades, desde o clássico ao contemporâneo.
+    </p>
+    <p>
+        Nossa história começou em Uberlândia-MG, com o sonho de levar conforto e qualidade para todos os lares da região. 
+        Hoje, expandimos nosso atendimento para a região do Triângulo Mineiro e São Paulo, sempre com o mesmo carinho e atendimento familiar que nos define. 
+        Convidamos você a explorar nosso catálogo e descobrir como é fácil e prazeroso renovar seu lar com a Enxovais Pedrosa.
+    </p>
+    <hr>
+    </section>
+    
+   
+    <section id="atividades-js">
+        <h2>Atividades da Equipe</h2>
+        <p>Digite a matrícula e teste as funções abaixo:</p>
+
+        <label for="matriculaInput">Matrícula:</label>
+        <input type="text" id="matriculaInput" placeholder="Digite a matrícula">
+
+        <button type="button" onclick="exercicio1_switch()">Ex. 1 (Switch: Perfil Completo)</button>
+        <button type="button" onclick="exercicio2_for_if()">Ex. 2 (For/If: Resumo)</button>
+        
+        <!-- AREA DOS RESULTADOS EXERCICIO 1
+         MUDANÇAS FEITAS: 
+            ADDICIONEI O EVENTO ONCLICK DENTRO DE IMG
+               ESSE EVENTO 'CHAMA' A FUNÇÃO proximaFoto() QUE CONTROLA AS FOTOS POR INDICE -->
+        <div id="discente-info">
+            <img id="fotoAluno" src="https://placehold.co/100x100/eee/aaa?text=Equipe" alt="Foto do Aluno"
+            onclick="proximaFoto()">
+            
+            <p id="infoAluno">As informações do aluno aparecerão aqui.</p>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="produtos">
+        <h2>Tabela de Preços - Destaques</h2>
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Detalhes</th>
+                    <th>Valor Estimado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jogo de Lençol Casal</td>
+                    <td>100% Algodão, 4 peças</td>
+                    <td>120,00 $</td>
+                </tr>
+                <tr>
+                    <td>Kit Toalhas de Banho</td>
+                    <td>2 Banho + 2 Rosto (Felpudas)</td>
+                    <td>45,50 $</td>
+                </tr>
+                <tr>
+                    <td>Edredom Queen Size</td>
+                    <td>Dupla face, toque de pluma</td>
+                    <td>89,90 $</td>
+                </tr>
+                <tr>
+                    <td>Toalha de Mesa Retangular</td>
+                    <td>6 Lugares, Tecido Jacquard, Antimanchas</td>
+                    <td>35,00 $</td>
+                </tr>
+                <tr>
+                    <td>Kit 2 Travesseiros</td>
+                    <td>Suporte firme, fibra siliconada, antialérgico</td>
+                    <td>29,90 $</td>
+                </tr>
+                <tr>
+                    <td>Roupão de Banho Unissex</td>
+                    <td>Microfibra aveludada, tamanho único</td>
+                    <td>55,00 $</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+    <section id="video">
+            <h2>Mais sobre Enxovais Pedrosa</h2>
+            <p>Saiba mais sobre o dia a dia da nossa empresa.</p>
+
+            <iframe width="320" height="240" 
+            src="https://www.youtube.com/embed/8C3esL1G3fI">
+            </iframe>
+            
+ 		
+        </section>
+
+
+    <footer style="text-align: center; background-color:#B0E0E6;">
+        <p>© 2025 Enxovais Pedrosa - Todos os direitos reservados.</p>
+        <p>Rua das Ruas, 1234 - Uberlândia | Tel: (34) 1234-1234</p>
+    </footer>
+    
+    <script>
+        /* 
+            MUDANÇAS: ADICIONEI O ARRAY listaEquipe
+            CADA ELEMENTO REPRESENTA UM INTEGRANTE, OS DADOS SÃO
+            IGUAIS AOS APRESENTADOS NA FUNÇÃO exercicio1_switch()
+            O ARRAY É USADO APENAS PARA 'CIRCULAR' ENTRE AS FOTOS/DADOS 
+            DOS PARTICIPANTES
+            
+            !!!!!!!!!!!!!!!!!!!!!!!
+            É NECESSÁRIO COLOCAR A FOTO DA LAURA, NÃO TENHO A VERSÃO DA ATIVIDADE
+            COM TAL FOTO, SÓ SUBSTITUIR NA PASTA DO EXERCICIO
+            !!!!!!!!!!!!!!!!!!!!!!!
+        */
+        var listaEquipe = [
+            {
+                img: 'Maria Fernanda.png',
+                mat: '11921bcc042',
+                nome: 'Maria Fernanda Nunes Gouveia',
+                funcao: 'Gerente de T.I.'
+            },
+
+            {
+                img: 'Luiz.png',
+                mat: '12421bcc093',
+                nome: 'Luiz Henrique Nascimento Silva Dourado',
+                funcao: 'Analista de Infraestrutura'
+            },
+
+            {
+                img: 'Laura.png',
+                mat: '12111bcc042',
+                nome: 'Laura De Barros Moreira',
+                funcao: 'Desenvolvedora Frontend'
+            },
+
+            {
+                img: 'Joao.png',
+                mat: '11921bcc024',
+                nome: 'João Vitor Gonçalves Oliveira',
+                funcao: 'Engenheiro de Dados'
+            },
+
+            {
+                img: 'Carlos.png',
+                mat: '12121bcc048',
+                nome: 'Carlos Antonio de Melo Mendes',
+                funcao: 'Desenvolvedor Backend'
+            },
+
+            {
+                img: 'Ana Julia.png',
+                mat: '12111bcc029',
+                nome: 'Ana Julia Maria Eustáquio Silva',
+                funcao: 'Designer UI/UX'
+            }
+        ];
+
+        /*
+            INDICE PARA CONTROLE DA 'ROTAÇÃO' DAS FOTOS/DESC DE CADA ALUNO
+            COMEÇA NO -1 PQ A FUNÇÃO proximaFoto() SE INICIA SOMANDO +1,
+            CAINDO NO PRIMEIRO ELEMENTO DA LISTA QUE NO CASO É A MARIA FERNANDA 
+            INDEPENDENTE DE QUAL MATRICULA FOI INSERIDA A PRIMEIRA VEZ, SEMPRE QUE
+            A FUNÇÃO FOR CHAMADA A PRIMEIRA FOTO/DESC APRESENTADA VAI SER A MARIA
+        */
+        var indiceAtual = -1;
+        
+        /*   
+            FUNÇÃO proximaFoto(), CHAMADA QUANDO O EVENTO onclick() QUE ESTA LOCALIZADO
+            NO ELEMENTO fotoAluno 
+            <img id="fotoAluno" src="" alt="Foto do Aluno" onclick="proximaFoto()">
+        */
+        function proximaFoto(){
+            indiceAtual ++;
+
+            //IF SÓ PARA CICLAR AS FOTOS/DESC
+            if (indiceAtual >= listaEquipe.length){
+                indiceAtual = 0;
+            }
+            
+            /*
+                imgEl E infoEl SÃO AS VARIAVEIS QUE GUARDAM OS ELEMENTOS 
+                HTML.
+                document. SE REFERE A ESSE ARQUIVO HTML
+                getElementById ATRIBUI À VARIAVEL O ELEMENTO COM A ID ESPECIFICADA
+                NO LITERAL É COMO SE FOSSE ALGO ASSIM
+                
+                imgEl = <img id="fotoAluno" src= ......>
+                infoEl = <p id="infoAluno"> .........  </p>
+            */
+            var imgEl = document.getElementById('fotoAluno');
+            var infoEl = document.getElementById('infoAluno');
+
+            //ALUNO É O 'OBJETO' COM AS DESCRIÇÕES E O NOME DO ARQUIVO IMAGEM
+            var aluno = listaEquipe[indiceAtual];
+
+            /*
+                A TROCA DE IMAGEM É FEITA AQUI
+                PEGAMOS A VARIAVEL imgEl QUE É REPRESENTA UM ELEMENTO HTML
+                E MUDAMOS O VALOR DO 'SOURCE'
+                COMO imgEl se refere ao elemento com id 'fotoAluno' TEM-SE
+                <img id="fotoAluno" src= "COLOCA AQUI O TEXTO/ VALOR CONTIDO EM aluno.img">
+            */
+            imgEl.src = aluno.img;
+
+            /*
+                MESMO PRINCIPIO DO DE CIMA 
+                NESSE CASO COMO infoEl SE REFERE A UM PARAGRAFO <p>
+                O innerHTML SE REFERE AO CONTEUDO INTERNO DESSE PARAGRAFO
+                NESSE CASO, DE PRIMEIRO, VAI SUBSTITUIR 
+                ""As informações do aluno aparecerão aqui"""
+                <p id="infoAluno">POR ESSSE TRAMBOLHO AQUI EM BAIXO</p>
+                AMBOS SÃO IGUAIS AO QUE FOI FEITO NO exercicio1_switch()
+                DA ATIVIDADE 2
+            */
+            infoEl.innerHTML = '<strong>Nome:</strong> ' + aluno.nome + '<br>' +
+                               '<strong>Matrícula:</strong> ' + aluno.mat + '<br>' +
+                               '<strong>Função:</strong> ' + aluno.funcao;
+        }
+
+
+        //RESTO TA IGUAL
+
+        function exercicio1_switch() {
+            
+            var matricula = document.getElementById('matriculaInput').value;
+            var imgEl = document.getElementById('fotoAluno');
+            var infoEl = document.getElementById('infoAluno');
+
+            switch (matricula) {
+                
+                case '11921bcc042': 
+                    imgEl.src = "Maria Fernanda.png";
+                    
+                    infoEl.innerHTML = '<strong>Nome:</strong> Maria Fernanda Nunes Gouveia<br>' +
+                                       '<strong>Matrícula:</strong> ' + matricula + '<br>' +
+                                       '<strong>Função:</strong> Gerente de T.I. Liderou a digitalização da Enxovais Pedrosa, projetando o e-commerce.';
+                    break; 
+
+
+                case '12111bcc029': 
+                    imgEl.src = 'Ana Julia.png';
+                    infoEl.innerHTML = '<strong>Nome:</strong> Ana Julia Maria Eustáquio Silva<br>' +
+                                       '<strong>Matrícula:</strong> ' + matricula + '<br>' +
+                                       '<strong>Função:</strong> Designer UI/UX. Responsável pela interface e experiência de compra do site.';
+                    break;
+                
+                    
+                case '12111bcc042': 
+                    imgEl.src = 'Laura.png';
+                    infoEl.innerHTML = '<strong>Nome:</strong> Laura De Barros Moreira<br>' +
+                                       '<strong>Matrícula:</strong> ' + matricula + '<br>' +
+                                       '<strong>Função:</strong> Desenvolvedora Frontend. Programou a interface do site em HTML, CSS e JavaScript.';
+                    break;
+                
+                    
+                case '12121bcc048': 
+                    imgEl.src = 'Carlos.png';
+                    infoEl.innerHTML = '<strong>Nome:</strong> Carlos Antonio de Melo Mendes<br>' +
+                                       '<strong>Matrícula:</strong> ' + matricula + '<br>' +
+                                       '<strong>Função:</strong> Tchola Backend. Cuidou do banco de dados de produtos e do formulário de cadastro.';
+                    break;
+                
+                    
+                case '11921bcc024': 
+                    imgEl.src = 'Joao.png';
+                    infoEl.innerHTML = '<strong>Nome:</strong> João Vitor Gonçalves Oliveira<br>' +
+                                       '<strong>Matrícula:</strong> ' + matricula + '<br>' +
+                                       '<strong>Função:</strong> Engenheiro de Dados. Analisa os dados de vendas para otimizar o estoque da loja.';
+                    break;
+                
+                    
+                case '12421bcc093': 
+                    imgEl.src = 'Luiz.png';
+                    infoEl.innerHTML = '<strong>Nome:</strong> Luiz Henrique Nascimento Silva Dourado<br>' +
+                                       '<strong>Matrícula:</strong> ' + matricula + '<br>' +
+                                       '<strong>Função:</strong> Analista de Infraestrutura. Garante que o site esteja sempre online, rápido e seguro.';
+                    break;
+
+                default:
+                    alert('Matrícula não encontrada (Exercício 1: Switch)!');
+                    imgEl.src = 'https://placehold.co/100x100/eee/aaa?text=Equipe';
+                    infoEl.innerHTML = 'As informações do aluno aparecerão aqui.';
+                    break;
+            }
+        }
+
+
+        function exercicio2_for_if() {
+            
+            var matriculasArray = ['12421bcc093', '11921bcc024', '12121bcc048', '12111bcc042', '11921bcc042', '106']; 
+            
+            var matriculaDigitada = document.getElementById('matriculaInput').value;
+            
+            var infoEl = document.getElementById('infoAluno');
+            
+            var textoInicial = document.getElementById('paragrafoInicial').innerHTML;
+            
+            var encontrado = false; 
+            
+            for (var i = 0; i < matriculasArray.length; i++) {
+                
+                if (matriculasArray[i] == matriculaDigitada) {
+                    encontrado = true;
+                    break; 
+                }
+            }
+            
+            if (encontrado == true) {
+                infoEl.innerHTML = textoInicial;
+                alert('Matrícula encontrada! (Ex 2: For/If). O texto foi substituído.');
+            } else {
+                alert('Matrícula não encontrada (Exercício 2: For/If)!');
+                infoEl.innerHTML = 'As informações do aluno aparecerão aqui.';
+            }
+        }
+
+    </script>
+        
+        
+</body>
+</html>
