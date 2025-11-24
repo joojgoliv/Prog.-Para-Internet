@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Produtos - Enxovais Pedrosa</title>
+</head>
+
+<body style="margin: 20px">
+
+<!-- Cabeçalho com título e menu de navegação -->
+<header style="text-align: center; background-color:#B0E0E6;">
+    <h1>Enxovais Pedrosa</h1>
+    <nav>
+        <!-- Links para navegar entre páginas -->
+        <a href="perfil.html">Início</a> |
+        <a href="cadastro.html">Produtos</a> |
+        <a href="cadastro.html">Cadastro</a>
+    </nav>
+</header>
+
+<hr>
+
+<section id="cadastro-produto">
+    <h2>Cadastro de Produtos – Enxovais Pedrosa</h2>
+
+    <!-- Formulário principal onde o usuário insere os dados -->
+    <form id="formCadastro">
+
+        <!-- Campo texto: Nome do produto -->
+        <label>Nome do Produto:</label><br>
+        <input type="text" id="nomeProduto" required><br><br>
+
+        <!-- Campo select: categoria determina qual imagem será mostrada -->
+        <label>Categoria:</label><br>
+        <select id="categoria" required>
+            <option value="">Selecione...</option>
+            <option value="lençol">Jogo de Lençol</option>
+            <option value="toalha">Toalhas</option>
+            <option value="edredom">Edredom</option>
+            <option value="tapete">Tapete</option>
+        </select><br><br>
+
+        <!-- Campo texto: material do produto -->
+        <label>Material:</label><br>
+        <input type="text" id="material" required><br><br>
+
+        <!-- Campo texto: cor principal -->
+        <label>Cor Principal:</label><br>
+        <input type="text" id="cor" required><br><br>
+
+        <!-- Campo texto: preço -->
+        <label>Preço (R$):</label><br>
+        <input type="text" id="preco" required><br><br>
+
+        <!-- Botão que dispara a função gerarRelatorio() -->
+        <button type="button" onclick="gerarRelatorio()">Cadastrar Produto</button>
+    </form>
+
+    <!-- Área onde será exibido o relatório do cadastro -->
+    <div id="resultadoCadastro" style="margin-top:25px;"></div>
+</section>
+
+<!-- Rodapé da página -->
+<footer style="text-align: center; background-color:#B0E0E6;">
+    <p>© 2025 Enxovais Pedrosa - Todos os direitos reservados.</p>
+    <p>Rua das Ruas, 1234 - Uberlândia | Tel: (34) 1234-1234</p>
+</footer>
+
+
+<script>
+
+// Adiciona um efeito de destaque (focus) no primeiro campo do formulário
+document.getElementById("nomeProduto").addEventListener("focus", function () {
+    // Muda o fundo do input quando ele recebe foco
+    this.style.backgroundColor = "#e6f7ff";
+});
+
+
+// Função principal: gera o relatório com os dados do formulário
+function gerarRelatorio() {
+
+    // Captura os valores digitados nos campos
+    var nome = document.getElementById("nomeProduto").value;
+    var categoria = document.getElementById("categoria").value;
+    var material = document.getElementById("material").value;
+    var cor = document.getElementById("cor").value;
+    var preco = document.getElementById("preco").value;
+
+    // Validação simples: impede relatório se algum campo estiver vazio
+    if (nome === "" || categoria === "" || material === "" || cor === "" || preco === "") {
+        alert("Preencha todos os campos!");
+        return;
+    }
+
+    // Variável que receberá a imagem correspondente à categoria
+    var imgCategoria = "";
+
+    // Switch escolhe automaticamente qual imagem exibir com base na categoria escolhida
+    switch (categoria) {
+        case "lençol":
+            imgCategoria = "jogo_lencol.jpg";
+            break;
+        case "toalha":
+            imgCategoria = "toalhas.jpg";
+            break;
+        case "edredom":
+            imgCategoria = "edredom.jpg";
+            break;
+        case "tapete":
+            imgCategoria = "tapete.jpg";
+            break;
+        default:
+            // Caso alguma categoria inesperada apareça
+            imgCategoria = "https://placehold.co/150x150?text=Produto";
+    }
+
+    // Template string contendo o relatório formatado
+    // Inserimos os valores capturados dentro do texto com ${variável}
+    var saida = `
+        <h3>Relatório do Cadastro</h3>
+        <p><strong>Nome do Produto:</strong> ${nome}</p>
+        <p><strong>Categoria:</strong> ${categoria}</p>
+        <p><strong>Material:</strong> ${material}</p>
+        <p><strong>Cor:</strong> ${cor}</p>
+        <p><strong>Preço:</strong> R$ ${preco}</p>
+        <img src="${imgCategoria}" width="150">
+    `;
+
+    // Exibe o relatório na div "resultadoCadastro"
+    document.getElementById("resultadoCadastro").innerHTML = saida;
+}
+
+</script>
+
+</body>
+</html>

@@ -9,8 +9,8 @@
     <header style="text-align: center; background-color:#B0E0E6;">
         <h1>Enxovais Pedrosa</h1>
         <nav>
-            <a href="index.html">Início</a> |
-            <a href="perfil.html">Produtos</a> |
+            <a href="perfil.html">Início</a> |
+            <a href="cadastro.html">Produtos</a> |
             <a href="cadastro.html">Cadastro</a>
         </nav>
     </header>
@@ -37,8 +37,7 @@
     </p>
     <hr>
     </section>
-    
-   
+       
     <section id="atividades-js">
         <h2>Atividades da Equipe</h2>
         <p>Digite a matrícula e teste as funções abaixo:</p>
@@ -55,7 +54,7 @@
                ESSE EVENTO 'CHAMA' A FUNÇÃO proximaFoto() QUE CONTROLA AS FOTOS POR INDICE -->
         <div id="discente-info">
             <img id="fotoAluno" src="https://placehold.co/100x100/eee/aaa?text=Equipe" alt="Foto do Aluno"
-            onclick="proximaFoto()">
+            onclick="proximaFoto()" style="width:300px; height:300px;">
             
             <p id="infoAluno">As informações do aluno aparecerão aqui.</p>
         </div>
@@ -134,11 +133,6 @@
             IGUAIS AOS APRESENTADOS NA FUNÇÃO exercicio1_switch()
             O ARRAY É USADO APENAS PARA 'CIRCULAR' ENTRE AS FOTOS/DADOS 
             DOS PARTICIPANTES
-            
-            !!!!!!!!!!!!!!!!!!!!!!!
-            É NECESSÁRIO COLOCAR A FOTO DA LAURA, NÃO TENHO A VERSÃO DA ATIVIDADE
-            COM TAL FOTO, SÓ SUBSTITUIR NA PASTA DO EXERCICIO
-            !!!!!!!!!!!!!!!!!!!!!!!
         */
         var listaEquipe = [
             {
@@ -156,7 +150,7 @@
             },
 
             {
-                img: 'Laura.png',
+                img: 'Laura.jpg',
                 mat: '12111bcc042',
                 nome: 'Laura De Barros Moreira',
                 funcao: 'Desenvolvedora Frontend'
@@ -275,7 +269,7 @@
                 
                     
                 case '12111bcc042': 
-                    imgEl.src = 'Laura.png';
+                    imgEl.src = 'Laura.jpg';
                     infoEl.innerHTML = '<strong>Nome:</strong> Laura De Barros Moreira<br>' +
                                        '<strong>Matrícula:</strong> ' + matricula + '<br>' +
                                        '<strong>Função:</strong> Desenvolvedora Frontend. Programou a interface do site em HTML, CSS e JavaScript.';
@@ -316,7 +310,7 @@
 
         function exercicio2_for_if() {
             
-            var matriculasArray = ['12421bcc093', '11921bcc024', '12121bcc048', '12111bcc042', '11921bcc042', '106']; 
+            var matriculasArray = ['12421bcc093', '11921bcc024', '12121bcc048', '12111bcc042', '11921bcc042', '12111bcc029']; 
             
             var matriculaDigitada = document.getElementById('matriculaInput').value;
             
@@ -344,7 +338,6 @@
         }
 
     </script>
-        
-        
+                
 </body>
 </html>
